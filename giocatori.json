@@ -1,0 +1,34 @@
+{
+  "giocatori": [
+    { "id": 1, "nome": "Maignan", "squadra": "Milan", "ruolo": "P" },
+    { "id": 2, "nome": "Sommer", "squadra": "Inter", "ruolo": "P" },
+    { "id": 3, "nome": "Di Gregorio", "squadra": "Juventus", "ruolo": "P" },
+    { "id": 4, "nome": "Provedel", "squadra": "Lazio", "ruolo": "P" },
+
+    { "id": 10, "nome": "Bastoni", "squadra": "Inter", "ruolo": "D" },
+    { "id": 11, "nome": "Bremer", "squadra": "Juventus", "ruolo": "D" },
+    { "id": 12, "nome": "Theo Hernandez", "squadra": "Milan", "ruolo": "D" },
+    { "id": 13, "nome": "Dimarco", "squadra": "Inter", "ruolo": "D" },
+    { "id": 14, "nome": "Buongiorno", "squadra": "Napoli", "ruolo": "D" },
+    { "id": 15, "nome": "Calafiori", "squadra": "Bologna", "ruolo": "D" },
+    { "id": 16, "nome": "Scalvini", "squadra": "Atalanta", "ruolo": "D" },
+    { "id": 17, "nome": "Bellanova", "squadra": "Torino", "ruolo": "D" },
+
+    { "id": 20, "nome": "Barella", "squadra": "Inter", "ruolo": "C" },
+    { "id": 21, "nome": "Koopmeiners", "squadra": "Atalanta", "ruolo": "C" },
+    { "id": 22, "nome": "Calhanoglu", "squadra": "Inter", "ruolo": "C" },
+    { "id": 23, "nome": "Pulisic", "squadra": "Milan", "ruolo": "C" },
+    { "id": 24, "nome": "Zaccagni", "squadra": "Lazio", "ruolo": "C" },
+    { "id": 25, "nome": "Orsolini", "squadra": "Bologna", "ruolo": "C" },
+    { "id": 26, "nome": "Gudmundsson", "squadra": "Genoa", "ruolo": "C" },
+    { "id": 27, "nome": "Pellegrini", "squadra": "Roma", "ruolo": "C" },
+
+    { "id": 30, "nome": "Lautaro Martinez", "squadra": "Inter", "ruolo": "A" },
+    { "id": 31, "nome": "Osimhen", "squadra": "Napoli", "ruolo": "A" },
+    { "id": 32, "nome": "Vlahovic", "squadra": "Juventus", "ruolo": "A" },
+    { "id": 33, "nome": "Zirkzee", "squadra": "Bologna", "ruolo": "A" },
+    { "id": 34, "nome": "Leao", "squadra": "Milan", "ruolo": "A" },
+    { "id": 35, "nome": "Retegui", "squadra": "Genoa", "ruolo": "A" },
+    { "id": 36, "nome": "Thuram", "squadra": "Inter", "ruolo": "A" }
+  ]
+}

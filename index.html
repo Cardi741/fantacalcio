@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fanta Auction Helper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fanta Auction Helper</h1>
+    </header>
+
+    <main>
+        <div id="login-container">
+            <h2>Benvenuto</h2>
+            <p>Accedi con il tuo account Google per creare le tue liste e gestire la tua asta.</p>
+            <button id="login-btn">Accedi con Google</button>
+        </div>
+
+        <div id="app-container" class="hidden">
+            <p>Caricamento...</p>
+        </div>
+    </main>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+
+    <script src="app.js"></script>
+</body>
+</html>
