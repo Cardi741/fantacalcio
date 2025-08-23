@@ -271,6 +271,25 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('#manage-player-modal .close-btn').addEventListener('click', () => {
             document.getElementById('manage-player-modal').classList.add('hidden');
         });
+        document.getElementById('manage-player-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const id = document.getElementById('player-id-input').value;
+            const player = {
+                id: id ? parseInt(id, 10) : Date.now(),
+                nome: document.getElementById('player-name').value,
+                squadra: document.getElementById('player-team').value,
+                ruolo: document.getElementById('player-role').value
+            };
+
+            if (id) { // Edit
+                allPlayers = allPlayers.map(p => p.id == id ? player : p);
+            } else { // Add
+                allPlayers.push(player);
+            }
+            await saveUserData();
+            document.getElementById('manage-player-modal').classList.add('hidden');
+            switchView('player-management-view'); // Refresh view
+        });
 
         // Modale Schiera Formazione
         document.querySelector('#set-lineup-modal .close-btn').addEventListener('click', () => {
@@ -535,30 +554,6 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('player-id-input').value = '';
             document.getElementById('manage-player-modal-title').textContent = 'Aggiungi Giocatore';
             document.getElementById('manage-player-modal').classList.remove('hidden');
-        });
-
-        document.querySelector('#manage-player-modal .close-btn').addEventListener('click', () => {
-            document.getElementById('manage-player-modal').classList.add('hidden');
-        });
-
-        document.getElementById('manage-player-form').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const id = document.getElementById('player-id-input').value;
-            const player = {
-                id: id ? parseInt(id, 10) : Date.now(),
-                nome: document.getElementById('player-name').value,
-                squadra: document.getElementById('player-team').value,
-                ruolo: document.getElementById('player-role').value
-            };
-
-            if (id) { // Edit
-                allPlayers = allPlayers.map(p => p.id == id ? player : p);
-            } else { // Add
-                allPlayers.push(player);
-            }
-            await saveUserData();
-            document.getElementById('manage-player-modal').classList.add('hidden');
-            switchView('player-management-view'); // Refresh view
         });
 
         document.querySelectorAll('.edit-player-btn').forEach(btn => {
