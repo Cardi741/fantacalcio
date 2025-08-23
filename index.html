@@ -9,6 +9,10 @@
 <body>
     <header>
         <h1>Fanta Auction Helper</h1>
+        <div id="user-info" class="hidden">
+            <span id="user-name"></span>
+            <button id="logout-btn">Logout</button>
+        </div>
     </header>
 
     <main>
@@ -19,9 +23,102 @@
         </div>
 
         <div id="app-container" class="hidden">
-            <p>Caricamento...</p>
+            <nav>
+                <button class="nav-btn active" data-view="dashboard-view">Dashboard</button>
+                <button class="nav-btn" data-view="squad-builder-view">Gestione Rosa</button>
+                <button class="nav-btn" data-view="auction-view">Modalità Asta</button>
+                <button class="nav-btn" data-view="player-management-view">Gestione Giocatori</button>
+                <button class="nav-btn" data-view="settings-view">Impostazioni</button>
+            </nav>
+            <div id="view-container">
+                <!-- Le viste verranno caricate qui da app.js -->
+                <p>Caricamento...</p>
+            </div>
         </div>
     </main>
+
+    <!-- Modali globali -->
+    <div id="add-player-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h4>Aggiungi alla tua lista</h4>
+            <form id="add-player-form">
+                <div class="form-group">
+                    <label>Piano A (Titolare):</label>
+                    <p id="modal-player-name-a"></p>
+                </div>
+                <div class="form-group">
+                    <label for="max-budget">Budget Massimo per Piano A:</label>
+                    <input type="number" id="max-budget" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="plan-b-select">Piano B (Alternativa):</label>
+                    <select id="plan-b-select"><option value="">Nessuno</option></select>
+                </div>
+                <div class="form-group">
+                    <label for="plan-c-select">Piano C (Riserva):</label>
+                    <select id="plan-c-select"><option value="">Nessuno</option></select>
+                </div>
+                <button type="submit">Salva Scelta</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="final-squad-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h4>La Tua Rosa Ufficiale</h4>
+            <div id="final-squad-content"></div>
+            <h5 id="total-spent-summary"></h5>
+        </div>
+    </div>
+
+    <div id="set-lineup-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h4>Schiera la tua Top 11</h4>
+            <form id="set-lineup-form">
+                <div class="form-group">
+                    <label for="formation-select">Scegli il modulo</label>
+                    <select id="formation-select">
+                        <option value="4-3-3">4-3-3</option>
+                        <option value="4-4-2">4-4-2</option>
+                        <option value="3-5-2">3-5-2</option>
+                    </select>
+                </div>
+                <div id="player-selection-slots"></div>
+                <button type="submit">Salva Formazione</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="manage-player-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h4 id="manage-player-modal-title">Aggiungi Giocatore</h4>
+            <form id="manage-player-form">
+                <input type="hidden" id="player-id-input">
+                <div class="form-group">
+                    <label for="player-name">Nome</label>
+                    <input type="text" id="player-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="player-team">Squadra</label>
+                    <input type="text" id="player-team" required>
+                </div>
+                <div class="form-group">
+                    <label for="player-role">Ruolo</label>
+                    <select id="player-role" required>
+                        <option value="P">Portiere</option>
+                        <option value="D">Difensore</option>
+                        <option value="C">Centrocampista</option>
+                        <option value="A">Attaccante</option>
+                    </select>
+                </div>
+                <button type="submit">Salva Giocatore</button>
+            </form>
+        </div>
+    </div>
 
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>

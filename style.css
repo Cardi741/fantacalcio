@@ -1,3 +1,10 @@
+:root {
+    --role-p-color: #ffc107;
+    --role-d-color: #007bff;
+    --role-c-color: #28a745;
+    --role-a-color: #dc3545;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f2f5;
@@ -13,9 +20,48 @@ header {
     width: 100%;
     background-color: #008000;
     color: white;
-    padding: 1rem 0;
-    text-align: center;
+    padding: 1rem 2rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+header h1 {
+    margin: 0;
+}
+
+#logout-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+nav {
+    width: 100%;
+    background-color: #f8f9fa;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #dee2e6;
+    margin-bottom: 2rem;
+}
+
+.nav-btn {
+    padding: 10px 20px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.nav-btn.active {
+    border-bottom: 3px solid #008000;
+    font-weight: bold;
 }
 
 main {
@@ -261,3 +307,78 @@ main {
 
 .won-btn { background-color: #28a745; color: white; border: none; }
 .lost-btn { background-color: #dc3545; color: white; border: none; }
+
+/* Stili per i ruoli */
+.role-summary, .auction-item {
+    border-left-width: 5px;
+    border-left-style: solid;
+}
+.player-table tr {
+    border-left-width: 5px;
+    border-left-style: solid;
+    border-left-color: #eee;
+}
+
+.role-P { border-left-color: var(--role-p-color); }
+.role-D { border-left-color: var(--role-d-color); }
+.role-C { border-left-color: var(--role-c-color); }
+.role-A { border-left-color: var(--role-a-color); }
+
+/* Stili per il campo da calcio */
+.football-pitch {
+    background-color: #53a053;
+    border: 2px solid #fff;
+    width: 100%;
+    max-width: 500px;
+    height: 700px;
+    margin: 2rem auto;
+    position: relative;
+    color: white;
+    overflow: hidden;
+}
+
+.pitch-line {
+    border: 1px solid rgba(255,255,255,0.5);
+    position: absolute;
+}
+
+.center-line {
+    width: 100%;
+    top: 50%;
+}
+
+.center-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.player-marker {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+}
+
+.player-shirt {
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 5px;
+}
+
+.player-marker.role-P .player-shirt { background-image: url('https://ssl.gstatic.com/onebox/sports/playing_positions/g_48.png'); }
+.player-marker.role-D .player-shirt { background-image: url('https://ssl.gstatic.com/onebox/sports/playing_positions/d_48.png'); }
+.player-marker.role-C .player-shirt { background-image: url('https://ssl.gstatic.com/onebox/sports/playing_positions/m_48.png'); }
+.player-marker.role-A .player-shirt { background-image: url('https://ssl.gstatic.com/onebox/sports/playing_positions/f_48.png'); }
